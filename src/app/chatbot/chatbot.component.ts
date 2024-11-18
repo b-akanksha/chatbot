@@ -23,7 +23,7 @@ export class ChatbotComponent {
   public messages: IConversationMessage[] = [];
   chatboxOpen: boolean = true;
 
-  constructor(private chatBotService: ChatBotService) {}
+  constructor(private chatBotService: ChatBotService) { }
 
   ngOnInit() {
     this.messages = this.chatBotService.messages;
@@ -44,7 +44,8 @@ export class ChatbotComponent {
           this.messages.push({
             from: 'bot',
             text: res.choices[0].text.trim()
-          })}, 500);
+          })
+        }, 500);
       },
       error: (err) => {
         setTimeout(() => {
@@ -53,6 +54,7 @@ export class ChatbotComponent {
             text: err.error?.error?.message
           });
         }, 500);
-    }});
+      }
+    });
   }
 }

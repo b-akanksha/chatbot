@@ -10,16 +10,16 @@ const apiKey: string = 'YOUR_OPENAI_API_KEY';
   providedIn: 'root'
 })
 export class ChatBotService {
-    public messages: IConversationMessage[] =     [{
-        text: "Hello Angular Mantra AI",
-        from: "user"
-      },
-      {
-        text: "Hello User, I am Mantra AI",
-        from: "bot"
-      }];
+  public messages: IConversationMessage[] = [{
+    text: "Hello Angular Mantra AI",
+    from: "user"
+  },
+  {
+    text: "Hello User, I am Mantra AI",
+    from: "bot"
+  }];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   submitPrompt(userInput: string): Observable<any> {
     const headers = new HttpHeaders()
@@ -27,7 +27,7 @@ export class ChatBotService {
       .set('Authorization', `Bearer ${apiKey}`);
 
     return this.http.post<any>(
-        apiUrl,
+      apiUrl,
       {
         model: 'text-davinci-003',
         prompt: userInput,

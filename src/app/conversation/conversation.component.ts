@@ -15,10 +15,10 @@ export class ConversationComponent implements AfterViewChecked {
   @Input() messages: IConversationMessage[] = [];
 
   ngAfterViewChecked(): void {
-    const calculatedTop = this.conversationContainer.nativeElement.scrollHeight 
-        - this.conversationContainer.nativeElement.clientHeight;
+    const calculatedTop = this.conversationContainer.nativeElement.scrollHeight
+      - this.conversationContainer.nativeElement.clientHeight;
     if (calculatedTop != this.conversationContainer.nativeElement.scrollTop)
-    this.conversationContainer.nativeElement.scrollTop = calculatedTop;
+      this.conversationContainer.nativeElement.scrollTop = calculatedTop;
   }
-  
+
 }

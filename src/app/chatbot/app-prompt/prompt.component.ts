@@ -18,7 +18,7 @@ export class PromptComponent {
   userInput: string = '';
   @Output() textChange = new EventEmitter<string>();
 
-  constructor() {}
+  constructor() { }
 
   sendMessage() {
     if (this.userInput.trim() !== '') {
